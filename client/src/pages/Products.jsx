@@ -28,7 +28,7 @@ const Products = () => {
           {/* Heading */}
           <h1 className="text-2xl uppercase sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4 sm:mb-6">
             Purity with Surety
-            <span className="text-[#cf4e25] block sm:inline"><br />
+            <span className="text-[#cf4e25] block sm:inline">
               {" "}
               With Every Products
             </span>

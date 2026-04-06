@@ -1,6 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 
 const GetInTouch = () => {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSuccess(true);
+        e.target.reset();
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("Error submitting form.");
+    }
+
+    setLoading(false);
+  };
+
   return (
     <section
       id="getintouch"
@@ -113,67 +143,181 @@ const GetInTouch = () => {
 
           {/* RIGHT SIDE FORM */}
           <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-md border border-gray-200">
-            <div className="mt-5 mb-10">
+            <div className="my-8">
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center">
                 Start Your Business with Us
               </h2>
             </div>
 
-            <form
-              action="https://api.web3forms.com/submit"
-              method="POST"
-              className="space-y-6"
-            >
-              {/* 🔑 Put your Web3Forms key here */}
+            <form onSubmit={handleSubmit} className="space-y-3">
               <input
                 type="hidden"
                 name="access_key"
                 value="YOUR_ACCESS_KEY_HERE"
               />
 
-              <div className="grid sm:grid-cols-2 gap-4">
+              {/* Name */}
+              <div>
+                <label className="text-xs font-medium text-gray-600 mb-1 block">
+                  Full Name *
+                </label>
                 <input
                   type="text"
                   name="name"
-                  required
                   placeholder="Full Name"
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#cf4e25]"
-                />
-
-                <input
-                  type="email"
-                  name="email"
                   required
-                  placeholder="Email Address"
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#cf4e25]"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 placeholder-gray-400 bg-white focus:ring-1 focus:ring-[#cf4e25] focus:border-[#cf4e25] outline-none"
                 />
               </div>
 
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#cf4e25]"
-              />
+              {/* Phone + WhatsApp */}
+              <div className="grid grid-cols-2 gap-2">
+                <div>
+                  <label className="text-xs text-gray-600 mb-1 block">
+                    Phone *
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone"
+                    required
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-[#cf4e25] outline-none"
+                  />
+                </div>
 
+                <div>
+                  <label className="text-xs text-gray-600 mb-1 block">
+                    WhatsApp *
+                  </label>
+                  <input
+                    type="tel"
+                    name="whatsapp"
+                    placeholder="WhatsApp"
+                    required
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-[#cf4e25] outline-none"
+                  />
+                </div>
+              </div>
+
+              {/* Email */}
+              <div>
+                <label className="text-xs text-gray-600 mb-1 block">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-[#cf4e25] outline-none"
+                />
+              </div>
+
+              {/* State */}
+              <div>
+                <label className="text-xs text-gray-600 mb-1 block">
+                  State *
+                </label>
+                <select
+                  name="state"
+                  required
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-500 focus:ring-2 focus:ring-[#cf4e25] focus:outline-none"
+                >
+                  <option value="" disabled selected hidden>
+                    Select State
+                  </option>
+
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                  <option value="Assam">Assam</option>
+                  <option value="Bihar">Bihar</option>
+                  <option value="Chhattisgarh">Chhattisgarh</option>
+                  <option value="Goa">Goa</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                  <option value="Jharkhand">Jharkhand</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Manipur">Manipur</option>
+                  <option value="Meghalaya">Meghalaya</option>
+                  <option value="Mizoram">Mizoram</option>
+                  <option value="Nagaland">Nagaland</option>
+                  <option value="Odisha">Odisha</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Sikkim">Sikkim</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Tripura">Tripura</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Uttarakhand">Uttarakhand</option>
+                  <option value="West Bengal">West Bengal</option>
+
+                  <option value="Andaman and Nicobar Islands">
+                    Andaman and Nicobar Islands
+                  </option>
+                  <option value="Chandigarh">Chandigarh</option>
+                  <option value="Dadra and Nagar Haveli and Daman and Diu">
+                    Dadra and Nagar Haveli and Daman and Diu
+                  </option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                  <option value="Ladakh">Ladakh</option>
+                  <option value="Lakshadweep">Lakshadweep</option>
+                  <option value="Puducherry">Puducherry</option>
+                </select>
+              </div>
+
+              {/* City + PIN */}
+              <div className="grid grid-cols-2 gap-2">
+                <input
+                  type="text"
+                  name="city"
+                  placeholder="City"
+                  required
+                  className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-[#cf4e25] outline-none"
+                />
+                <input
+                  type="text"
+                  name="pincode"
+                  placeholder="PIN"
+                  required
+                  className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-[#cf4e25] outline-none"
+                />
+              </div>
+
+              {/* Investment */}
+              <select
+                name="investment"
+                required
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-700 focus:ring-1 focus:ring-[#cf4e25] outline-none"
+              >
+                <option value="">Investment Range</option>
+                <option>Below ₹1L</option>
+                <option>₹1–3L</option>
+                <option>₹3–5L</option>
+                <option>₹5–10L</option>
+                <option>₹10L+</option>
+              </select>
+
+              {/* Business Details */}
               <textarea
                 name="message"
-                required
-                rows="5"
-                placeholder="Tell us about your business requirement..."
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#cf4e25]"
+                placeholder="Tell us about your business / experience (optional)"
+                rows="3"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-[#cf4e25] focus:outline-none"
               ></textarea>
 
+              {/* Submit */}
               <button
                 type="submit"
-                className="w-full bg-[#cf4e25] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#b8431f] transition"
+                disabled={loading}
+                className="w-full bg-[#cf4e25] text-white py-2.5 rounded-lg text-sm font-medium hover:bg-[#b8431f] transition"
               >
-                Send Inquiry
+                {loading ? "Submitting..." : "Submit"}
               </button>
-
-              <p className="text-sm text-gray-500 text-center">
-                Our team will contact you within 24 hours.
-              </p>
             </form>
           </div>
         </div>

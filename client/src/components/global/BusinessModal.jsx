@@ -61,7 +61,7 @@ const BusinessModal = ({ isOpen, onClose }) => {
         {/* Close */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-400 hover:text-black text-xl"
+          className="absolute top-3 right-3 text-gray-800 hover:text-black text-xl"
         >
           ✕
         </button>
@@ -92,14 +92,24 @@ const BusinessModal = ({ isOpen, onClose }) => {
             className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-[#cf4e25] focus:outline-none"
           />
 
-          {/* Phone */}
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone / WhatsApp Number"
-            required
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-[#cf4e25] focus:outline-none"
-          />
+          {/* Phone + WhatsApp */}
+          <div className="grid grid-cols-2 gap-3">
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              required
+              className="border border-gray-300 rounded-lg px-4 py-2 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-[#cf4e25] focus:outline-none"
+            />
+
+            <input
+              type="tel"
+              name="whatsapp"
+              placeholder="WhatsApp Number"
+              required
+              className="border border-gray-300 rounded-lg px-4 py-2 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-[#cf4e25] focus:outline-none"
+            />
+          </div>
 
           {/* Email */}
           <input
@@ -181,10 +191,27 @@ const BusinessModal = ({ isOpen, onClose }) => {
             />
           </div>
 
+          {/* Investment Field */}
+          <select
+            name="investment"
+            required
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-500 focus:ring-2 focus:ring-[#cf4e25] focus:outline-none"
+          >
+            <option value="" disabled selected hidden>
+              Expected Investment Range
+            </option>
+
+            <option value="Below 1 Lakh">Below ₹1 Lakh</option>
+            <option value="1-3 Lakh">₹1 – ₹3 Lakh</option>
+            <option value="3-5 Lakh">₹3 – ₹5 Lakh</option>
+            <option value="5-10 Lakh">₹5 – ₹10 Lakh</option>
+            <option value="10+ Lakh">Above ₹10 Lakh</option>
+          </select>
+
           {/* Business Details */}
           <textarea
             name="message"
-            placeholder="Business Details"
+            placeholder="Tell us about your business / experience (optional)"
             rows="3"
             className="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-[#cf4e25] focus:outline-none"
           ></textarea>
@@ -195,7 +222,7 @@ const BusinessModal = ({ isOpen, onClose }) => {
             disabled={loading}
             className="w-full bg-[#cf4e25] text-white py-3 rounded-lg font-semibold hover:bg-[#b8431f] transition"
           >
-            {loading ? "Submitting..." : "Submit"}
+            {loading ? "Submitting..." : "Submit Inquiry"}
           </button>
         </form>
       </div>

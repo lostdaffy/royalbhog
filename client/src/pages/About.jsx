@@ -113,33 +113,7 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Content - Images Grid */}
             <div className="relative">
-              <div className="grid grid-cols-2 gap-6">
-                <div className="space-y-6">
-                  <img
-                    src="/images/dhaniya.jpeg"
-                    alt="Fresh spices"
-                    className="w-full h-64 object-cover rounded-2xl shadow-lg"
-                  />
-                  <img
-                    src="/images/haldi.jpeg"
-                    alt="Wheat flour"
-                    className="w-full h-48 object-cover rounded-2xl shadow-lg"
-                  />
-                </div>
-
-                <div className="mt-12 space-y-6">
-                  <img
-                    src="/images/mirch.jpeg"
-                    alt="Mustard oil"
-                    className="w-full h-48 object-cover rounded-2xl shadow-lg"
-                  />
-                  <img
-                    src="/images/oil.jpeg"
-                    alt="Indian spices"
-                    className="w-full h-64 object-cover rounded-2xl shadow-lg"
-                  />
-                </div>
-              </div>
+              <img src="/images/about-img.png" className="w-full object-contain rounded-lg" alt="" />
             </div>
 
             {/* Right Content */}

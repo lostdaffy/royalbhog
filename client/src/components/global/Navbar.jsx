@@ -57,7 +57,7 @@ const Navbar = () => {
               <Link to="/home">
                 <img
                   src="/images/brand-logo.png"
-                  className="w-40 h-auto"
+                  className="w-50 h-auto"
                   alt="Company Logo"
                 />
               </Link>

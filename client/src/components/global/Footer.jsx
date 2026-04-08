@@ -87,7 +87,7 @@ const Footer = () => {
                   <strong>
                     Registered at Ministry of Corporate Affairs, New Delhi
                   </strong> <br />
-                  228, Latifpur Khubbanpur, Bhagwanpur <br />
+                  Unit - 228, Latifpur Khubbanpur, Bhagwanpur <br />
                   Roorkee, District Haridwar <br />
                   Uttarakhand - 247661
                 </p>

@@ -63,7 +63,7 @@ const Contact = () => {
                 <strong>Address 1 - </strong> Registered at Ministry of
                 Corporate Affairs, New Delhi <br />
                 <br />
-                <strong>Address 2 - </strong> 228, Latifpur Khubbanpur,
+                <strong>Address 2 - </strong> Unit - 228, Latifpur Khubbanpur,
                 Bhagwanpur, Roorkee <br />
                 District Haridwar, Uttarakhand - 247661
               </p>

@@ -49,7 +49,7 @@ const Navbar = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="bg-white px-4 sm:px-8 lg:px-20 py-4 relative">
+      <nav className="bg-white px-4 sm:px-8 lg:px-20 py-2 relative">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -57,14 +57,14 @@ const Navbar = () => {
               <Link to="/home">
                 <img
                   src="/images/brand-logo.png"
-                  className="w-50 h-auto"
+                  className="w-65 h-auto"
                   alt="Company Logo"
                 />
               </Link>
             </div>
 
             {/* Desktop Links */}
-            <div className="hidden lg:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-16">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}

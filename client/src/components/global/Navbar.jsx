@@ -49,8 +49,8 @@ const Navbar = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="bg-white px-4 sm:px-8 lg:px-20 py-2 relative">
-        <div className="max-w-7xl mx-auto">
+      <nav className="bg-white relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-8 py-2">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="text-2xl sm:text-3xl font-bold">
@@ -64,7 +64,7 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Links */}
-            <div className="hidden lg:flex items-center space-x-16">
+            <div className="hidden lg:flex items-center space-x-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
@@ -86,7 +86,8 @@ const Navbar = () => {
                 onClick={() => setOpen(true)}
                 className="inline-flex items-center justify-center bg-[#cf4e25] text-white px-5 py-2.5 rounded-full font-semibold shadow-md hover:bg-[#b8431f] transition"
               >
-                <i className="ri-user-add-fill mr-1"> </i>Register to Start Business
+                <i className="ri-user-add-fill mr-1"> </i>Register to Start
+                Business
               </button>
             </div>
 

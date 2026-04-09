@@ -76,8 +76,8 @@ const GetInTouch = () => {
                     <strong>Address 1 - </strong> Registered at Ministry of
                     Corporate Affairs, New Delhi <br />
                     <br />
-                    <strong>Address 2 - </strong> Unit - 228, Latifpur Khubbanpur,
-                    Bhagwanpur, Roorkee <br />
+                    <strong>Address 2 - </strong> Unit - 228, Latifpur
+                    Khubbanpur, Bhagwanpur, Roorkee <br />
                     District Haridwar, Uttarakhand - 247661
                   </p>
                 </div>
@@ -144,7 +144,7 @@ const GetInTouch = () => {
           {/* RIGHT SIDE FORM */}
           <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-md border border-gray-200">
             <div className="my-8">
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center">
+              <h2 className="text-2xl font-bold text-gray-800 text-center">
                 Start Your Business with Us
               </h2>
             </div>

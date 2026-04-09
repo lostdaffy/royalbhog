@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <section className="relative overflow-hidden bg-amber-50">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-4 lg:px-0">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-y-6 items-center w-full py-20">
           {/* Left Content */}
           <div className="text-white space-y-6 sm:space-y-8 order-2 lg:order-1">
             <div className="space-y-4 sm:space-y-6">
-              <h2 className="text-gray-800 text-4xl uppercase sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+              <h2 className="text-gray-800 uppercase text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight">
                 Wide Range of <br /> Royal Bhog with <br /> Purity & Surety
               </h2>
 

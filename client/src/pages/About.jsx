@@ -38,7 +38,7 @@ const About = () => {
             {/* LEFT CONTENT */}
             <div className="space-y-8">
               <div className="space-y-4">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
+                <h1 className="text-4xl sm:text-4xl lg:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
                   Bringing Purity &
                   <span className="text-[#cf4e25]"> Quality</span> to Every
                   Kitchen
@@ -119,12 +119,12 @@ const About = () => {
             {/* Right Content */}
             <div className="space-y-8">
               <div className="space-y-6">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+                <h2 className="text-4xl sm:text-4xl lg:text-4xl xl:text-5xl font-bold text-slate-900 leading-tight">
                   Where Quality Meets
                   <span className="text-[#cf4e25]"> Everyday Nutrition</span>
                 </h2>
 
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-md text-gray-600 leading-relaxed">
                   At Royal Bhog Agro International Private Limited, we are
                   committed to delivering high-quality food products that
                   combine purity, taste, and nutrition. Our carefully selected
